@@ -6,11 +6,12 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
           <div>
+            <div className="flex items-center gap-2 mb-3">
+              <img src="/brand-mark.svg" alt="JagX" width={28} height={28} className="rounded-md" />
+              <img src="/jrilicense-logo.jpg" alt="JRILICENSE" width={28} height={28} className="rounded-full object-cover border border-[#2a2a2a]" />
+            </div>
             <div className="text-sm font-medium mb-2">JagX &amp; JRILICENSE</div>
-            <p className="text-xs text-[#5c5c5c] leading-relaxed">
-              AI, secure social, OS, silicon, mobility and devices — built for
-              Africa and the world.
-            </p>
+            <p className="text-xs text-[#5c5c5c] leading-relaxed">AI, secure social, OS, silicon, mobility and devices — built for Africa and the world.</p>
           </div>
           <div>
             <div className="text-xs text-[#5c5c5c] uppercase tracking-wider mb-3">Products</div>
@@ -25,15 +26,11 @@ export default function Footer() {
           </div>
           <div>
             <div className="text-xs text-[#5c5c5c] uppercase tracking-wider mb-3">Company</div>
-            <div className="space-y-2 text-sm text-[#8a8a8a]">
-              <Link href="/about" className="block hover:text-white">About</Link>
-            </div>
+            <Link href="/about" className="block text-sm text-[#8a8a8a] hover:text-white">About</Link>
           </div>
           <div>
             <div className="text-xs text-[#5c5c5c] uppercase tracking-wider mb-3">Credit</div>
-            <p className="text-xs text-[#5c5c5c] leading-relaxed">
-              Designed by JagX AI<br />Created by JagX &amp; JRILICENSE
-            </p>
+            <p className="text-xs text-[#5c5c5c] leading-relaxed">Designed by JagX AI<br />Created by JagX &amp; JRILICENSE</p>
           </div>
         </div>
         <div className="pt-6 border-t border-[#1f1f1f] flex flex-col sm:flex-row sm:justify-between gap-3 text-xs text-[#5c5c5c]">

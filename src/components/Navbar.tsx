@@ -38,42 +38,28 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-5 h-14 flex items-center justify-between">
-        <Link href="/" className="font-medium tracking-tight text-[15px]">
-          JagX <span className="text-[#8a8a8a]">&</span> JRILICENSE
+        <Link href="/" className="flex items-center gap-2.5 group">
+          <img src="/brand-mark.svg" alt="JagX" width={32} height={32} className="rounded-lg" />
+          <span className="font-medium tracking-tight text-[15px] hidden sm:inline">
+            JagX <span className="text-[#8a8a8a]">&</span> JRILICENSE
+          </span>
+          <img src="/jrilicense-logo.jpg" alt="JRILICENSE" width={28} height={28} className="rounded-full object-cover border border-[#2a2a2a]" />
         </Link>
         <nav className="hidden lg:flex items-center gap-6">
           {NAV.map((n) => (
-            <Link
-              key={n.href}
-              href={n.href}
-              className={`text-[13px] transition-colors ${
-                pathname === n.href
-                  ? "text-white"
-                  : "text-[#8a8a8a] hover:text-white"
-              }`}
-            >
+            <Link key={n.href} href={n.href} className={`text-[13px] transition-colors ${pathname === n.href ? "text-white" : "text-[#8a8a8a] hover:text-white"}`}>
               {n.label}
             </Link>
           ))}
         </nav>
-        <button
-          type="button"
-          className="lg:hidden text-[#8a8a8a] text-sm"
-          onClick={() => setOpen(!open)}
-        >
+        <button type="button" className="lg:hidden text-[#8a8a8a] text-sm" onClick={() => setOpen(!open)}>
           {open ? "Close" : "Menu"}
         </button>
       </div>
       {open && (
         <div className="lg:hidden border-t border-[#1f1f1f] bg-[#0a0a0a] px-5 py-4 space-y-3">
           {NAV.map((n) => (
-            <Link
-              key={n.href}
-              href={n.href}
-              className="block text-sm text-[#b0b0b0]"
-            >
-              {n.label}
-            </Link>
+            <Link key={n.href} href={n.href} className="block text-sm text-[#b0b0b0]">{n.label}</Link>
           ))}
         </div>
       )}
