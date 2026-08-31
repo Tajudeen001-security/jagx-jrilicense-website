@@ -1,267 +1,71 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 
 const NAV = [
-  { id: "home", label: "Home" },
-  { id: "ai", label: "Our AI" },
-  { id: "connect", label: "JagX Connect" },
-  { id: "chips", label: "Future Chips" },
-  { id: "cars", label: "Cars" },
-  { id: "mobile", label: "Mobile" },
+  { id: "products", label: "Products" },
+  { id: "ai", label: "JagX AI" },
+  { id: "connect", label: "Connect" },
+  { id: "silicon", label: "Silicon" },
+  { id: "mobility", label: "Mobility" },
+  { id: "devices", label: "Devices" },
   { id: "about", label: "About" },
-];
-
-const PRODUCTS = [
-  {
-    id: "ai",
-    title: "JagX AI",
-    tag: "Intelligence",
-    desc: "Next-generation multi-agent AI system. Hands-off coding, tool calling, live web retrieval, sandboxed execution and identity-protected intelligence. Built exclusively by JagX & JRILICENSE.",
-    features: ["Multi-agent GROUP coding CLI", "13+ intelligence modes", "Embedded terminal & live web", "Tool calling & PDF/CV generation", "Identity protection & watermarking"],
-    gradient: "from-cyan-400 to-blue-600",
-  },
-  {
-    id: "connect",
-    title: "JagX Connect",
-    tag: "Social",
-    desc: "The most secured social platform Africa — and the world — will ever have. Real-time connections, end-to-end privacy, Buddy Circles, Moments Feed and native mobile experience. Privacy-first by design.",
-    features: ["End-to-end encrypted messaging", "Buddy Circles & interest communities", "Real-time Moments Feed & Stories", "Native Flutter Android & iOS apps", "Granular privacy controls", "Built for African networks & global scale"],
-    gradient: "from-purple-400 to-pink-600",
-  },
-  {
-    id: "chips",
-    title: "JagX Silicon",
-    tag: "Future Chip Company",
-    desc: "Designing the next generation of AI-optimized silicon. Custom NPUs, ultra-efficient edge chips and secure enclave architecture powering JagX devices and the intelligent edge.",
-    features: ["AI-first neural processing units", "Ultra-low power edge silicon", "Hardware security modules", "On-device intelligence", "Open research & African talent pipeline"],
-    gradient: "from-amber-400 to-orange-600",
-  },
-  {
-    id: "cars",
-    title: "JagX Mobility",
-    tag: "Next-Gen Cars",
-    desc: "Software-defined vehicles with autonomous intelligence, over-the-air everything, and security as a core principle. The future of mobility engineered by JagX.",
-    features: ["Software-defined architecture", "AI-powered autonomy stack", "Always-secure OTA updates", "Immersive cabin intelligence", "Sustainable electric platforms"],
-    gradient: "from-emerald-400 to-teal-600",
-  },
-  {
-    id: "mobile",
-    title: "JagX Devices",
-    tag: "Mobile & Edge",
-    desc: "Flagship mobile devices and edge hardware that put privacy, AI and performance first. Seamless integration with JagX Connect and JagX AI.",
-    features: ["Privacy-first mobile OS layer", "On-device JagX AI", "Secure element & biometric stack", "Long-life modular design", "Deep Connect integration"],
-    gradient: "from-rose-400 to-red-600",
-  },
 ];
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-[#030712]/80 backdrop-blur-xl border-b border-white/5 shadow-lg shadow-cyan-500/5" : "bg-transparent"}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          <a href="#home" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-400 via-purple-500 to-rose-500 flex items-center justify-center font-bold text-black text-sm group-hover:scale-110 transition-transform">JX</div>
-            <span className="font-semibold text-lg tracking-tight">JagX <span className="text-cyan-400">&</span> JRILICENSE</span>
-          </a>
-          <nav className="hidden lg:flex items-center gap-1">
-            {NAV.map((item) => (
-              <a key={item.id} href={`#${item.id}`} className="px-3 py-2 text-sm text-slate-300 hover:text-white rounded-lg hover:bg-white/5 transition-all">{item.label}</a>
-            ))}
-          </nav>
-          <div className="hidden lg:flex items-center gap-3">
-            <a href="#connect" className="px-5 py-2.5 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 text-sm font-medium text-white hover:opacity-90 transition-opacity shadow-lg shadow-cyan-500/25">Explore Connect</a>
-          </div>
-          <button className="lg:hidden p-2 rounded-lg hover:bg-white/5" onClick={() => setOpen(!open)} aria-label="Menu">
-            <div className="w-6 h-5 flex flex-col justify-between">
-              <span className={`block h-0.5 bg-white transition-all ${open ? "rotate-45 translate-y-2" : ""}`} />
-              <span className={`block h-0.5 bg-white transition-all ${open ? "opacity-0" : ""}`} />
-              <span className={`block h-0.5 bg-white transition-all ${open ? "-rotate-45 -translate-y-2" : ""}`} />
-            </div>
-          </button>
-        </div>
+    <header
+      className={`fixed top-0 inset-x-0 z-50 transition-colors duration-300 ${
+        scrolled ? "bg-[#0a0a0a]/90 backdrop-blur-md border-b border-[#1f1f1f]" : "bg-transparent"
+      }`}
+    >
+      <div className="max-w-6xl mx-auto px-5 h-14 flex items-center justify-between">
+        <a href="#top" className="font-medium tracking-tight text-[15px]">
+          JagX <span className="text-[#8a8a8a]">&</span> JRILICENSE
+        </a>
+        <nav className="hidden md:flex items-center gap-7">
+          {NAV.map((n) => (
+            <a
+              key={n.id}
+              href={`#${n.id}`}
+              className="text-[13px] text-[#8a8a8a] hover:text-white transition-colors"
+            >
+              {n.label}
+            </a>
+          ))}
+        </nav>
+        <button
+          type="button"
+          className="md:hidden text-[#8a8a8a] text-sm"
+          onClick={() => setOpen(!open)}
+        >
+          {open ? "Close" : "Menu"}
+        </button>
       </div>
       {open && (
-        <div className="lg:hidden bg-[#0f172a]/95 backdrop-blur-xl border-t border-white/5">
-          <div className="px-4 py-4 space-y-1">
-            {NAV.map((item) => (
-              <a key={item.id} href={`#${item.id}`} onClick={() => setOpen(false)} className="block px-4 py-3 rounded-lg text-slate-200 hover:bg-white/5">{item.label}</a>
-            ))}
-          </div>
+        <div className="md:hidden border-t border-[#1f1f1f] bg-[#0a0a0a] px-5 py-4 space-y-3">
+          {NAV.map((n) => (
+            <a
+              key={n.id}
+              href={`#${n.id}`}
+              onClick={() => setOpen(false)}
+              className="block text-sm text-[#b0b0b0]"
+            >
+              {n.label}
+            </a>
+          ))}
         </div>
       )}
     </header>
-  );
-}
-
-function Hero() {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-  return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      <div className="absolute inset-0 grid-bg opacity-40" />
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cyan-500/20 rounded-full blur-[120px] animate-pulse-glow" />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-purple-500/20 rounded-full blur-[100px] animate-pulse-glow" style={{ animationDelay: "1.5s" }} />
-      <div className="absolute top-32 right-20 w-4 h-4 rounded-full bg-cyan-400 animate-float opacity-60" />
-      <div className="absolute bottom-40 left-16 w-3 h-3 rounded-full bg-purple-400 animate-float-delayed opacity-50" />
-      <div className="relative z-10 max-w-6xl mx-auto px-4 text-center">
-        <div className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-300 text-sm mb-8 transition-all duration-1000 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
-          <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-          Created by JagX & JRILICENSE
-        </div>
-        <h1 className={`text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 transition-all duration-1000 delay-100 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-          <span className="block">The Future of</span>
-          <span className="gradient-text">Advanced Technology</span>
-        </h1>
-        <p className={`max-w-2xl mx-auto text-lg md:text-xl text-slate-400 mb-10 transition-all duration-1000 delay-200 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-          AI that codes itself. The most secured social platform Africa and the world will have. Future chips. Next-gen cars. Mobile devices that put privacy first. All engineered under one vision.
-        </p>
-        <div className={`flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-1000 delay-300 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-          <a href="#ai" className="px-8 py-4 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 font-semibold text-white shadow-xl shadow-cyan-500/30 hover:scale-105 transition-transform">Discover Our AI</a>
-          <a href="#connect" className="px-8 py-4 rounded-full border border-white/20 bg-white/5 backdrop-blur font-semibold hover:bg-white/10 transition-colors">Explore JagX Connect</a>
-        </div>
-        <div className={`mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto transition-all duration-1000 delay-500 ${mounted ? "opacity-100" : "opacity-0"}`}>
-          {[{"value": "AI-First", "label": "Intelligence Core"}, {"value": "E2E", "label": "Secure Social"}, {"value": "Silicon", "label": "Future Chips"}, {"value": "Global", "label": "Ambition"}].map((s) => (
-            <div key={s.label} className="text-center">
-              <div className="text-2xl md:text-3xl font-bold gradient-text">{s.value}</div>
-              <div className="text-sm text-slate-500 mt-1">{s.label}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-500 text-xs animate-bounce">
-        <span>Scroll</span>
-        <div className="w-5 h-8 rounded-full border border-slate-600 flex justify-center pt-1.5"><div className="w-1 h-2 rounded-full bg-cyan-400" /></div>
-      </div>
-    </section>
-  );
-}
-
-function ProductSection({ product, index }: { product: (typeof PRODUCTS)[0]; index: number }) {
-  const ref = useRef<HTMLElement>(null);
-  const [visible, setVisible] = useState(false);
-  useEffect(() => {
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setVisible(true); }, { threshold: 0.15 });
-    if (ref.current) obs.observe(ref.current);
-    return () => obs.disconnect();
-  }, []);
-  const reverse = index % 2 === 1;
-  return (
-    <section id={product.id} ref={ref} className="relative py-24 md:py-32 overflow-hidden">
-      <div className="absolute inset-0 grid-bg opacity-20" />
-      <div className={`absolute ${reverse ? "right-0" : "left-0"} top-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full blur-[100px] opacity-20 bg-gradient-to-br ${product.gradient}`} />
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`flex flex-col ${reverse ? "lg:flex-row-reverse" : "lg:flex-row"} items-center gap-12 lg:gap-20`}>
-          <div className={`flex-1 transition-all duration-1000 ${visible ? "opacity-100 translate-x-0" : `opacity-0 ${reverse ? "translate-x-12" : "-translate-x-12"}`}`}>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs uppercase tracking-wider text-slate-400 mb-4">{product.tag}</div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4"><span className={`bg-gradient-to-r ${product.gradient} bg-clip-text text-transparent`}>{product.title}</span></h2>
-            <p className="text-lg text-slate-400 mb-8 leading-relaxed">{product.desc}</p>
-            <ul className="space-y-3">
-              {product.features.map((f, i) => (
-                <li key={f} className={`flex items-start gap-3 transition-all duration-700 ${visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"}`} style={{ transitionDelay: `${200 + i * 80}ms` }}>
-                  <span className={`mt-1.5 w-2 h-2 rounded-full bg-gradient-to-r ${product.gradient} shrink-0`} />
-                  <span className="text-slate-300">{f}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className={`flex-1 w-full max-w-md transition-all duration-1000 delay-200 ${visible ? "opacity-100 translate-x-0 scale-100" : `opacity-0 ${reverse ? "-translate-x-12" : "translate-x-12"} scale-95`}`}>
-            <div className={`relative rounded-3xl p-1 bg-gradient-to-br ${product.gradient}`}>
-              <div className="rounded-[22px] bg-[#0f172a] p-8 md:p-10">
-                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${product.gradient} flex items-center justify-center text-2xl font-bold text-black mb-6 animate-float`}>
-                  {product.title.split(" ").map((w) => w[0]).join("").slice(0, 2)}
-                </div>
-                <h3 className="text-2xl font-semibold mb-2">{product.title}</h3>
-                <p className="text-slate-400 text-sm mb-6">{product.tag}</p>
-                <div className="space-y-2">
-                  {[0.7, 0.5, 0.9, 0.4].map((w, i) => (
-                    <div key={i} className="h-2 rounded-full bg-white/5 overflow-hidden">
-                      <div className={`h-full rounded-full bg-gradient-to-r ${product.gradient} transition-all duration-1000`} style={{ width: visible ? `${w * 100}%` : "0%", transitionDelay: `${400 + i * 150}ms` }} />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function AboutSection() {
-  const ref = useRef<HTMLElement>(null);
-  const [visible, setVisible] = useState(false);
-  useEffect(() => {
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setVisible(true); }, { threshold: 0.2 });
-    if (ref.current) obs.observe(ref.current);
-    return () => obs.disconnect();
-  }, []);
-  return (
-    <section id="about" ref={ref} className="relative py-24 md:py-32">
-      <div className="absolute inset-0 grid-bg opacity-20" />
-      <div className="relative max-w-5xl mx-auto px-4 text-center">
-        <div className={`transition-all duration-1000 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs uppercase tracking-wider text-slate-400 mb-6">About the Vision</div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Built by <span className="gradient-text">JagX & JRILICENSE</span></h2>
-          <p className="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed mb-10">
-            JagX & JRILICENSE is more than a technology collective — it is a long-term mission to create sovereign, privacy-respecting, AI-native infrastructure for Africa and the world. From the multi-agent coding intelligence of JagX AI, to JagX Connect — engineered to become the most secured social platform the continent and the planet will experience — to the silicon, vehicles and devices that will run on that same foundation.
-          </p>
-          <p className="text-slate-500 max-w-2xl mx-auto mb-12">Every product carries the same DNA: security by design, intelligence that serves people, and technology that scales from Lagos to the global edge.</p>
-          <div className="grid sm:grid-cols-3 gap-6 text-left">
-            {[
-              { title: "Security First", text: "End-to-end encryption, hardware enclaves, and privacy controls at every layer." },
-              { title: "AI Everywhere", text: "From coding agents to on-device intelligence and autonomous systems." },
-              { title: "African Roots, Global Reach", text: "Built with African talent and infrastructure needs in mind — ready for the world." },
-            ].map((c, i) => (
-              <div key={c.title} className={`rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`} style={{ transitionDelay: `${200 + i * 120}ms` }}>
-                <h3 className="font-semibold text-lg mb-2 text-cyan-300">{c.title}</h3>
-                <p className="text-sm text-slate-400">{c.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function CTA() {
-  return (
-    <section className="relative py-24">
-      <div className="max-w-4xl mx-auto px-4 text-center">
-        <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-cyan-500/10 via-purple-500/10 to-rose-500/10 p-12 md:p-16 relative overflow-hidden">
-          <div className="absolute inset-0 grid-bg opacity-30" />
-          <div className="relative">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">The next decade of technology<br /><span className="gradient-text">starts here.</span></h2>
-            <p className="text-slate-400 mb-8 max-w-xl mx-auto">Follow the journey of JagX AI, JagX Connect, future silicon, mobility and devices — all created by JagX & JRILICENSE.</p>
-            <a href="#home" className="inline-flex px-8 py-4 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 font-semibold shadow-xl shadow-purple-500/30 hover:scale-105 transition-transform">Back to the Top</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Footer() {
-  return (
-    <footer className="border-t border-white/5 py-12">
-      <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 via-purple-500 to-rose-500 flex items-center justify-center font-bold text-black text-xs">JX</div>
-          <span className="font-medium">JagX & JRILICENSE</span>
-        </div>
-        <p className="text-sm text-slate-500 text-center">Created by JagX & JRILICENSE · All rights reserved · Building the most secured platforms for Africa and the world</p>
-        <div className="text-xs text-slate-600">jagx · jrilicense · 2026</div>
-      </div>
-    </footer>
   );
 }
 
@@ -269,15 +73,369 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main>
-        <Hero />
-        {PRODUCTS.map((p, i) => (
-          <ProductSection key={p.id} product={p} index={i} />
-        ))}
-        <AboutSection />
-        <CTA />
+      <main id="top">
+        <section className="pt-28 pb-20 md:pt-36 md:pb-28 px-5">
+          <div className="max-w-3xl mx-auto">
+            <p className="eyebrow mb-6">Created by JagX & JRILICENSE</p>
+            <h1 className="text-4xl sm:text-5xl md:text-[3.5rem] font-normal tracking-tight leading-[1.15] mb-8">
+              Building the tools
+              <br />
+              Africa and the world
+              <br />
+              will actually rely on.
+            </h1>
+            <p className="prose-body max-w-xl mb-10">
+              We are not another generic tech brand. JagX & JRILICENSE is a
+              long-term effort to ship real AI systems, a social network people
+              can trust with their data, custom silicon, vehicles, and devices —
+              designed with African constraints and global ambition in mind.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="#ai"
+                className="inline-flex items-center px-5 py-2.5 text-sm bg-white text-black rounded-full hover:bg-[#e8e8e8] transition-colors"
+              >
+                Read about JagX AI
+              </a>
+              <a
+                href="#connect"
+                className="inline-flex items-center px-5 py-2.5 text-sm border border-[#333] rounded-full text-[#e8e8e8] hover:border-[#666] transition-colors"
+              >
+                JagX Connect
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <hr className="divider max-w-6xl mx-auto" />
+
+        <section id="products" className="py-16 px-5">
+          <div className="max-w-6xl mx-auto">
+            <p className="eyebrow mb-10">What we are building</p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+              {[
+                { href: "#ai", title: "JagX AI", note: "Multi-agent intelligence" },
+                { href: "#connect", title: "JagX Connect", note: "Secure social" },
+                { href: "#silicon", title: "JagX Silicon", note: "Future chips" },
+                { href: "#mobility", title: "JagX Mobility", note: "Next-gen cars" },
+                { href: "#devices", title: "JagX Devices", note: "Mobile & edge" },
+              ].map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="group block border border-[#1f1f1f] bg-[#111] p-5 rounded-lg hover:border-[#333] transition-colors"
+                >
+                  <div className="text-sm font-medium mb-1 group-hover:text-white">
+                    {item.title}
+                  </div>
+                  <div className="text-xs text-[#5c5c5c]">{item.note}</div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="ai" className="py-20 md:py-28 px-5 border-t border-[#1f1f1f]">
+          <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            <div>
+              <p className="eyebrow mb-4">01 — Intelligence</p>
+              <h2 className="text-3xl md:text-4xl font-normal tracking-tight mb-6">JagX AI</h2>
+              <div className="prose-body space-y-5">
+                <p>
+                  JagX AI started as a practical answer to a simple problem:
+                  most coding assistants still force you to babysit every file
+                  change. We built a multi-agent system that can plan, scaffold,
+                  write, review, and correct its own work — so you can describe
+                  the outcome and step back.
+                </p>
+                <p>
+                  The core product is a hands-off GROUP coding CLI. A lead agent
+                  coordinates specialists (scaffold, backend, frontend, files,
+                  shell, design, review). Folders are created before code is
+                  written. Agents announce when they are done. Review catches
+                  mistakes and sends work back. Destructive commands stay
+                  blocked by default.
+                </p>
+                <p>
+                  Beyond the CLI, JagX AI includes tool calling (web search,
+                  code execution, PDF and portfolio generation), live retrieval,
+                  and identity protection so the model does not claim to be
+                  built by other companies. Everything is watermarked and
+                  attributed to JagX & JRILICENSE.
+                </p>
+                <p>
+                  We treat AI as infrastructure, not a chat toy. The goal is
+                  reliable, inspectable systems that African developers and
+                  teams can run without handing their entire stack to a closed
+                  foreign platform.
+                </p>
+              </div>
+              <ul className="mt-8 space-y-2 text-sm text-[#8a8a8a]">
+                <li>— Multi-agent GROUP workflow with self-review</li>
+                <li>— Embedded terminal and sandboxed execution</li>
+                <li>— Tool calling, PDF/CV generation, web retrieval</li>
+                <li>— Identity protection and clear attribution</li>
+              </ul>
+            </div>
+            <div className="img-frame rounded-xl aspect-[4/5] max-h-[520px]">
+              <img
+                src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=900&q=80"
+                alt="Humanoid robot representing JagX AI systems"
+                width={900}
+                height={1125}
+              />
+            </div>
+          </div>
+        </section>
+
+        <section id="connect" className="py-20 md:py-28 px-5 border-t border-[#1f1f1f]">
+          <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            <div className="order-2 lg:order-1 img-frame rounded-xl aspect-[4/5] max-h-[520px]">
+              <img
+                src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=900&q=80"
+                alt="People connecting on mobile — JagX Connect"
+                width={900}
+                height={1125}
+              />
+            </div>
+            <div className="order-1 lg:order-2">
+              <p className="eyebrow mb-4">02 — Social</p>
+              <h2 className="text-3xl md:text-4xl font-normal tracking-tight mb-6">JagX Connect</h2>
+              <div className="prose-body space-y-5">
+                <p>
+                  Social platforms that dominate Africa were not designed here.
+                  They optimize for engagement and advertising, not for privacy,
+                  offline-friendly networks, or the trust problems people face
+                  every day. JagX Connect is our attempt to build the social
+                  layer we actually want to use.
+                </p>
+                <p>
+                  The product is a real-time network with posts, moments,
+                  private and group messaging, and interest-based Buddy Circles.
+                  Native Android and iOS apps (Flutter) share the same accounts
+                  and data as the web. Deep links open the app when installed.
+                  Authentication supports email, OTP, and Google.
+                </p>
+                <p>
+                  Security is not a marketing line. Messaging is built around
+                  end-to-end principles, granular privacy controls, and the
+                  assumption that users in high-risk environments need stronger
+                  defaults. We are explicit about the goal: become the most
+                  secure social platform Africa has, and a credible option for
+                  the rest of the world.
+                </p>
+                <p>
+                  Connect is not trying to copy every feature of every network.
+                  It is trying to get the fundamentals right — identity, chat,
+                  feed, communities, and trust — so people can build real
+                  relationships without becoming the product.
+                </p>
+              </div>
+              <ul className="mt-8 space-y-2 text-sm text-[#8a8a8a]">
+                <li>— End-to-end oriented messaging and privacy controls</li>
+                <li>— Buddy Circles, Moments feed, real-time chat</li>
+                <li>— Native Flutter apps for Android and iOS</li>
+                <li>— Built for African networks and global scale</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="silicon" className="py-20 md:py-28 px-5 border-t border-[#1f1f1f]">
+          <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            <div>
+              <p className="eyebrow mb-4">03 — Future chip company</p>
+              <h2 className="text-3xl md:text-4xl font-normal tracking-tight mb-6">JagX Silicon</h2>
+              <div className="prose-body space-y-5">
+                <p>
+                  Software sits on hardware. If Africa and independent builders
+                  only ever consume chips designed elsewhere, we remain locked
+                  into other people's roadmaps and security assumptions.
+                  JagX Silicon is the long-horizon bet: design AI-first silicon
+                  that can run intelligent workloads on the edge.
+                </p>
+                <p>
+                  The work is early and deliberate. We focus on neural
+                  processing units for on-device inference, ultra-low-power
+                  designs for phones and vehicles, and hardware security modules
+                  that make secure enclaves practical. The point is not vaporware
+                  — it is talent, IP, and partnerships over a decade.
+                </p>
+                <p>
+                  Edge intelligence matters when connectivity is expensive or
+                  unreliable. It matters for privacy. It matters when a robot,
+                  car, or phone must keep working without streaming every frame
+                  to a foreign cloud.
+                </p>
+              </div>
+              <ul className="mt-8 space-y-2 text-sm text-[#8a8a8a]">
+                <li>— AI-oriented neural processing units</li>
+                <li>— Low-power edge silicon and secure enclaves</li>
+                <li>— On-device inference for phones, cars, robots</li>
+                <li>— Long-term talent and research pipeline</li>
+              </ul>
+            </div>
+            <div className="img-frame rounded-xl aspect-[4/5] max-h-[520px]">
+              <img
+                src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&q=80"
+                alt="Semiconductor and circuit board — JagX Silicon"
+                width={900}
+                height={1125}
+              />
+            </div>
+          </div>
+        </section>
+
+        <section id="mobility" className="py-20 md:py-28 px-5 border-t border-[#1f1f1f]">
+          <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            <div className="order-2 lg:order-1 img-frame rounded-xl aspect-[4/5] max-h-[520px]">
+              <img
+                src="https://images.unsplash.com/photo-1617788138017-80ad40651399?w=900&q=80"
+                alt="Modern electric vehicle — JagX Mobility"
+                width={900}
+                height={1125}
+              />
+            </div>
+            <div className="order-1 lg:order-2">
+              <p className="eyebrow mb-4">04 — Next-gen cars</p>
+              <h2 className="text-3xl md:text-4xl font-normal tracking-tight mb-6">JagX Mobility</h2>
+              <div className="prose-body space-y-5">
+                <p>
+                  Vehicles are becoming computers with wheels. The companies that
+                  win will treat software, security, and autonomy as first-class
+                  products. JagX Mobility is our path into that future.
+                </p>
+                <p>
+                  We design for software-defined vehicles: signed over-the-air
+                  updates, an autonomy stack that can improve over time, and
+                  cabin systems that integrate with JagX AI and JagX Connect.
+                  Security is not optional when a car is a network endpoint that
+                  carries people.
+                </p>
+                <p>
+                  Progress will be measured in years. The same discipline we
+                  apply to AI and social applies here: ship foundations, avoid
+                  theater, keep the long arc in view.
+                </p>
+              </div>
+              <ul className="mt-8 space-y-2 text-sm text-[#8a8a8a]">
+                <li>— Software-defined architecture</li>
+                <li>— Secure OTA and autonomy-oriented stack</li>
+                <li>— Cabin intelligence tied to JagX AI</li>
+                <li>— Electric platforms with long support cycles</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="devices" className="py-20 md:py-28 px-5 border-t border-[#1f1f1f]">
+          <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            <div>
+              <p className="eyebrow mb-4">05 — Mobile & edge</p>
+              <h2 className="text-3xl md:text-4xl font-normal tracking-tight mb-6">JagX Devices</h2>
+              <div className="prose-body space-y-5">
+                <p>
+                  Phones and edge hardware are the primary computers for most
+                  people on the continent. If those devices are closed and
+                  optimized for ads, every layer above them inherits the same
+                  compromises. JagX Devices is about hardware that respects the
+                  user.
+                </p>
+                <p>
+                  Direction: privacy-first defaults, on-device JagX AI, secure
+                  elements for identity, modular design that extends useful life.
+                  Integration with JagX Connect is part of the product thesis
+                  from day one.
+                </p>
+                <p>
+                  Hardware is hard. We sequence partnerships, prototypes, and
+                  software so that when devices ship, they belong to the same
+                  system as the AI and the network.
+                </p>
+              </div>
+              <ul className="mt-8 space-y-2 text-sm text-[#8a8a8a]">
+                <li>— Privacy-first mobile software layer</li>
+                <li>— On-device AI and secure element</li>
+                <li>— Long-life, repair-friendly design goals</li>
+                <li>— Deep Connect and JagX AI integration</li>
+              </ul>
+            </div>
+            <div className="img-frame rounded-xl aspect-[4/5] max-h-[520px]">
+              <img
+                src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=900&q=80"
+                alt="Smartphone — JagX Devices"
+                width={900}
+                height={1125}
+              />
+            </div>
+          </div>
+        </section>
+
+        <section id="about" className="py-20 md:py-28 px-5 border-t border-[#1f1f1f]">
+          <div className="max-w-3xl mx-auto">
+            <p className="eyebrow mb-4">About</p>
+            <h2 className="text-3xl md:text-4xl font-normal tracking-tight mb-8">
+              Who JagX & JRILICENSE is
+            </h2>
+            <div className="prose-body space-y-6">
+              <p>
+                JagX & JRILICENSE is the name under which this work is done.
+                It is the attribution on the CLI, the AI systems, the Connect
+                apps, and the long-term hardware efforts. When something ships,
+                it should be clear who built it and what they stand for.
+              </p>
+              <p>
+                Too much technology that shapes daily life in Africa is designed
+                elsewhere, for other markets. That produces products that work
+                until privacy is optional, offline is an afterthought, and the
+                local developer is a tenant. We want the opposite: systems we can
+                inspect, secure, and evolve.
+              </p>
+              <p>
+                That does not mean isolation. Global standards matter. It means
+                building capacity — software, silicon, talent — so African teams
+                are not permanently downstream. JagX AI is usable today. JagX
+                Connect is real code. Silicon, mobility, and devices are
+                multi-year programs that only make sense if the software layers
+                already work.
+              </p>
+              <p>
+                We care about security as a default. We care about attribution:
+                models should not pretend to be someone else's. We care
+                about software that survives unreliable networks. And we care
+                about saying clearly when something is early — instead of
+                dressing every idea as finished.
+              </p>
+              <p>
+                If you are a developer, designer, or someone who wants a social
+                network that treats you like a person, the work is open for
+                contribution and scrutiny. This site is part of that: plain
+                language, no theater, a public record of what we claim to build.
+              </p>
+              <p className="text-[#8a8a8a] text-sm pt-4">
+                Created by JagX & JRILICENSE. Not affiliated with Jaguar
+                Health, Jaguar Cars, or any other Jag* brand. Independent
+                technology effort focused on AI, social infrastructure, and
+                advanced systems for Africa and beyond.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <footer className="border-t border-[#1f1f1f] py-12 px-5">
+          <div className="max-w-6xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+            <div>
+              <div className="text-sm font-medium mb-1">JagX & JRILICENSE</div>
+              <div className="text-xs text-[#5c5c5c]">
+                AI · Connect · Silicon · Mobility · Devices
+              </div>
+            </div>
+            <div className="text-xs text-[#5c5c5c]">
+              Created by JagX & JRILICENSE · 2026
+            </div>
+          </div>
+        </footer>
       </main>
-      <Footer />
     </>
   );
 }
