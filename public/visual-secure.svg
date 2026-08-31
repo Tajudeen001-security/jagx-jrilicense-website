@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" fill="none">
+  <rect width="400" height="280" rx="20" fill="#0d0d0d"/>
+  <path d="M200 60 L260 90 L260 150 Q260 200 200 230 Q140 200 140 150 L140 90 Z" fill="#161616" stroke="#3a3a3a" stroke-width="2"/>
+  <text x="200" y="145" text-anchor="middle" font-size="18" fill="#e8e8e8">JX</text>
+  <text x="200" y="250" text-anchor="middle" font-size="14" fill="#e8e8e8">JagX Shield</text>
+  <text x="200" y="268" text-anchor="middle" font-size="10" fill="#666">Identity · threat intel · secure ops</text>
+</svg>

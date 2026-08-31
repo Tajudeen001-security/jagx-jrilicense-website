@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" fill="none">
+  <rect width="400" height="280" rx="20" fill="#0d0d0d"/>
+  <path d="M200 50 L220 120 L280 120 L230 160 L250 230 L200 185 L150 230 L170 160 L120 120 L180 120 Z" fill="#1a1a1a" stroke="#444" stroke-width="2"/>
+  <text x="200" y="255" text-anchor="middle" font-size="14" fill="#e8e8e8">JagX Energy</text>
+  <text x="200" y="272" text-anchor="middle" font-size="10" fill="#666">Edge power · solar-ready systems</text>
+</svg>
