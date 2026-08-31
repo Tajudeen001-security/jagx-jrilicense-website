@@ -27,7 +27,7 @@ export default function ProductDetail({ product }: { product: ProductLine }) {
 
   return (
     <>
-      <section className="pt-16 pb-10 px-5">
+      <section className="pt-16 pb-8 px-5">
         <div className="max-w-3xl mx-auto">
           <p className="eyebrow mb-4">{product.title}</p>
           <h1 className="text-4xl md:text-5xl font-normal tracking-tight mb-5 leading-tight">{product.title}</h1>
@@ -36,24 +36,25 @@ export default function ProductDetail({ product }: { product: ProductLine }) {
         </div>
       </section>
 
-      <section className="px-5 pb-12">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid sm:grid-cols-2 gap-4 mb-4">
-            {gallery.slice(0, 2).map((src, i) => (
-              <div key={src + i} className={`img-frame rounded-2xl aspect-[4/3] flex items-center justify-center overflow-hidden bg-[#0d0d0d] ${i === 0 ? "anim-glow" : ""}`}>
-                <img src={src} alt={`${product.title} visual ${i + 1}`} className={`w-full h-full ${src.startsWith("/") ? "object-contain p-6 anim-float" : "object-cover"}`} />
-              </div>
-            ))}
-          </div>
-          {gallery.length > 2 && (
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-              {gallery.slice(2).map((src, i) => (
-                <div key={src + i} className="img-frame rounded-xl aspect-[4/3] overflow-hidden bg-[#0d0d0d] flex items-center justify-center">
-                  <img src={src} alt={`${product.title} gallery ${i + 3}`} className={`w-full h-full ${src.startsWith("/") ? "object-contain p-4" : "object-cover"}`} />
-                </div>
-              ))}
+      {/* ONE IMAGE PER ROW — full width, stacked */}
+      <section className="px-5 pb-10">
+        <div className="max-w-3xl mx-auto space-y-6">
+          {gallery.map((src, i) => (
+            <div
+              key={src + i}
+              className={`img-frame rounded-2xl aspect-[16/10] sm:aspect-[2/1] overflow-hidden bg-[#0d0d0d] flex items-center justify-center ${i === 0 ? "anim-glow" : ""}`}
+            >
+              <img
+                src={src}
+                alt={`${product.title} — image ${i + 1}`}
+                className={`w-full h-full ${
+                  src.startsWith("/")
+                    ? "object-contain p-8 sm:p-12 anim-float"
+                    : "object-cover"
+                }`}
+              />
             </div>
-          )}
+          ))}
         </div>
       </section>
 
@@ -61,36 +62,51 @@ export default function ProductDetail({ product }: { product: ProductLine }) {
         <div className="max-w-3xl mx-auto prose-body space-y-6">
           <p className="text-lg text-[#d0d0d0] leading-relaxed">{longIntro}</p>
           {longBody.map((para) => (
-            <p key={para.slice(0, 48)}>{para}</p>
+            <p key={para.slice(0, 56)}>{para}</p>
           ))}
         </div>
       </section>
 
       <section className="px-5 py-14 border-t border-[#1f1f1f]">
-        <div className="max-w-3xl mx-auto space-y-10">
+        <div className="max-w-3xl mx-auto space-y-12">
           <div>
-            <h2 className="text-xl text-white font-normal mb-3">In Africa</h2>
-            <p className="prose-body">{africaImpact}</p>
+            <p className="eyebrow mb-3">Africa</p>
+            <h2 className="text-2xl text-white font-normal mb-5 tracking-tight">Advantages for Africa</h2>
+            <div className="prose-body space-y-5">
+              {africaImpact.split("\n\n").map((block) => (
+                <p key={block.slice(0, 40)}>{block}</p>
+              ))}
+            </div>
           </div>
           <div>
-            <h2 className="text-xl text-white font-normal mb-3">In the world</h2>
-            <p className="prose-body">{worldImpact}</p>
+            <p className="eyebrow mb-3">World</p>
+            <h2 className="text-2xl text-white font-normal mb-5 tracking-tight">Advantages for the world</h2>
+            <div className="prose-body space-y-5">
+              {worldImpact.split("\n\n").map((block) => (
+                <p key={block.slice(0, 40)}>{block}</p>
+              ))}
+            </div>
           </div>
           <div>
-            <h2 className="text-xl text-white font-normal mb-3">Direction</h2>
-            <p className="prose-body">{direction}</p>
+            <p className="eyebrow mb-3">Path</p>
+            <h2 className="text-2xl text-white font-normal mb-5 tracking-tight">Where we are going</h2>
+            <div className="prose-body space-y-5">
+              {direction.split("\n\n").map((block) => (
+                <p key={block.slice(0, 40)}>{block}</p>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       <section className="px-5 py-14 border-t border-[#1f1f1f]">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           <p className="eyebrow mb-3">Product types</p>
           <h2 className="text-2xl md:text-3xl font-normal tracking-tight mb-8">What we offer under {product.title}</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="space-y-4">
             {product.types.map((t) => (
               <div key={t.name} className="border border-[#1f1f1f] bg-[#111] rounded-2xl p-6 chip-grid-item">
-                <div className="text-sm text-white mb-3 font-medium">{t.name}</div>
+                <div className="text-base text-white mb-2 font-medium">{t.name}</div>
                 <p className="text-sm text-[#8a8a8a] leading-relaxed">{t.note}</p>
               </div>
             ))}
@@ -133,15 +149,15 @@ export default function ProductDetail({ product }: { product: ProductLine }) {
       )}
 
       <section className="px-5 py-14 border-t border-[#1f1f1f]">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           <p className="eyebrow mb-3">Investment outlook</p>
           <h2 className="text-2xl md:text-3xl font-normal tracking-tight mb-4">Indicative spend 2032 → 2040+</h2>
-          <p className="text-sm text-[#5c5c5c] mb-8 max-w-2xl">Planning ranges only — not a formal budget or guarantee.</p>
-          <div className="grid md:grid-cols-3 gap-4">
+          <p className="text-sm text-[#5c5c5c] mb-8">Planning ranges only — not a formal budget or guarantee.</p>
+          <div className="space-y-4">
             {product.outlook.map((o) => (
               <div key={o.period} className="border border-[#1f1f1f] bg-[#111] rounded-2xl p-6">
-                <div className="text-[11px] font-mono text-[#5c5c5c] tracking-wider mb-3">{o.period}</div>
-                <div className="text-lg text-white mb-3">{o.spend}</div>
+                <div className="text-[11px] font-mono text-[#5c5c5c] tracking-wider mb-2">{o.period}</div>
+                <div className="text-lg text-white mb-2">{o.spend}</div>
                 <p className="text-sm text-[#8a8a8a] leading-relaxed">{o.focus}</p>
               </div>
             ))}
