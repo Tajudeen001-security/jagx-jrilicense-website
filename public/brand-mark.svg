@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="48" y2="48">
+      <stop stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#a0a0a0"/>
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" rx="12" fill="#141414"/>
+  <rect x="1" y="1" width="46" height="46" rx="11" stroke="#2a2a2a"/>
+  <text x="24" y="31" text-anchor="middle" font-family="system-ui,sans-serif" font-weight="700" font-size="16" fill="url(#g)">JX</text>
+</svg>
