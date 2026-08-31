@@ -3,6 +3,28 @@ import type { ProductLine } from "@/lib/products";
 import { FREE_API_KEYS } from "@/lib/products";
 
 export default function ProductDetail({ product }: { product: ProductLine }) {
+  const gallery =
+    product.gallery && product.gallery.length > 0
+      ? product.gallery
+      : [product.img, "/visual-africa.svg"];
+  const longBody =
+    product.longBody && product.longBody.length > 0
+      ? product.longBody
+      : [
+          `${product.title} is part of the JagX & JRILICENSE family — built for African constraints and global reach.`,
+          `Each product type below is a concrete offer path as the line matures through the 2030s.`,
+        ];
+  const longIntro = product.longIntro || `${product.title}: ${product.tagline}`;
+  const africaImpact =
+    product.africaImpact ||
+    "Designed with mobile-first users across Africa in mind — costly data, shared devices, and trust risk are primary constraints.";
+  const worldImpact =
+    product.worldImpact ||
+    "The same product family is meant to be competitive worldwide: privacy and reliability are not regional preferences.";
+  const direction =
+    product.direction ||
+    "Ship foundations first, scale with partners, and keep layers coherent with OS, Silicon, and Cloud.";
+
   return (
     <>
       <section className="pt-16 pb-10 px-5">
@@ -17,15 +39,15 @@ export default function ProductDetail({ product }: { product: ProductLine }) {
       <section className="px-5 pb-12">
         <div className="max-w-6xl mx-auto">
           <div className="grid sm:grid-cols-2 gap-4 mb-4">
-            {product.gallery.slice(0, 2).map((src, i) => (
+            {gallery.slice(0, 2).map((src, i) => (
               <div key={src + i} className={`img-frame rounded-2xl aspect-[4/3] flex items-center justify-center overflow-hidden bg-[#0d0d0d] ${i === 0 ? "anim-glow" : ""}`}>
                 <img src={src} alt={`${product.title} visual ${i + 1}`} className={`w-full h-full ${src.startsWith("/") ? "object-contain p-6 anim-float" : "object-cover"}`} />
               </div>
             ))}
           </div>
-          {product.gallery.length > 2 && (
+          {gallery.length > 2 && (
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-              {product.gallery.slice(2).map((src, i) => (
+              {gallery.slice(2).map((src, i) => (
                 <div key={src + i} className="img-frame rounded-xl aspect-[4/3] overflow-hidden bg-[#0d0d0d] flex items-center justify-center">
                   <img src={src} alt={`${product.title} gallery ${i + 3}`} className={`w-full h-full ${src.startsWith("/") ? "object-contain p-4" : "object-cover"}`} />
                 </div>
@@ -37,8 +59,8 @@ export default function ProductDetail({ product }: { product: ProductLine }) {
 
       <section className="px-5 py-14 border-t border-[#1f1f1f]">
         <div className="max-w-3xl mx-auto prose-body space-y-6">
-          <p className="text-lg text-[#d0d0d0] leading-relaxed">{product.longIntro}</p>
-          {product.longBody.map((para) => (
+          <p className="text-lg text-[#d0d0d0] leading-relaxed">{longIntro}</p>
+          {longBody.map((para) => (
             <p key={para.slice(0, 48)}>{para}</p>
           ))}
         </div>
@@ -48,15 +70,15 @@ export default function ProductDetail({ product }: { product: ProductLine }) {
         <div className="max-w-3xl mx-auto space-y-10">
           <div>
             <h2 className="text-xl text-white font-normal mb-3">In Africa</h2>
-            <p className="prose-body">{product.africaImpact}</p>
+            <p className="prose-body">{africaImpact}</p>
           </div>
           <div>
             <h2 className="text-xl text-white font-normal mb-3">In the world</h2>
-            <p className="prose-body">{product.worldImpact}</p>
+            <p className="prose-body">{worldImpact}</p>
           </div>
           <div>
             <h2 className="text-xl text-white font-normal mb-3">Direction</h2>
-            <p className="prose-body">{product.direction}</p>
+            <p className="prose-body">{direction}</p>
           </div>
         </div>
       </section>
@@ -96,9 +118,7 @@ export default function ProductDetail({ product }: { product: ProductLine }) {
           <div className="max-w-3xl mx-auto">
             <p className="eyebrow mb-3">Free for builders</p>
             <h2 className="text-2xl md:text-3xl font-normal tracking-tight mb-4">JagX AI API keys</h2>
-            <p className="prose-body mb-8">
-              Use these free starter keys in your prototypes, student projects, and hackathons. Fair use applies — do not abuse rate limits or resell access. Keys are published by JagX &amp; JRILICENSE for the community.
-            </p>
+            <p className="prose-body mb-8">Free starter keys for prototypes, student projects, and hackathons. Fair use. Published by JagX &amp; JRILICENSE.</p>
             <div className="space-y-4">
               {FREE_API_KEYS.map((k) => (
                 <div key={k.key} className="border border-[#2a2a2a] bg-[#111] rounded-2xl p-5">
@@ -108,9 +128,6 @@ export default function ProductDetail({ product }: { product: ProductLine }) {
                 </div>
               ))}
             </div>
-            <p className="text-xs text-[#5c5c5c] mt-6 leading-relaxed">
-              Example: <code className="text-[#8a8a8a]">Authorization: Bearer jagx-…</code> — Designed by JagX AI.
-            </p>
           </div>
         </section>
       )}
@@ -119,7 +136,7 @@ export default function ProductDetail({ product }: { product: ProductLine }) {
         <div className="max-w-6xl mx-auto">
           <p className="eyebrow mb-3">Investment outlook</p>
           <h2 className="text-2xl md:text-3xl font-normal tracking-tight mb-4">Indicative spend 2032 → 2040+</h2>
-          <p className="text-sm text-[#5c5c5c] mb-8 max-w-2xl leading-relaxed">Planning ranges only — not a formal budget or guarantee.</p>
+          <p className="text-sm text-[#5c5c5c] mb-8 max-w-2xl">Planning ranges only — not a formal budget or guarantee.</p>
           <div className="grid md:grid-cols-3 gap-4">
             {product.outlook.map((o) => (
               <div key={o.period} className="border border-[#1f1f1f] bg-[#111] rounded-2xl p-6">
@@ -134,8 +151,8 @@ export default function ProductDetail({ product }: { product: ProductLine }) {
 
       <section className="px-5 py-12 border-t border-[#1f1f1f]">
         <div className="max-w-3xl mx-auto flex flex-wrap gap-5 text-sm">
-          <Link href="/roadmap" className="text-[#8a8a8a] hover:text-white transition-colors">Full roadmap →</Link>
-          <Link href="/" className="text-[#8a8a8a] hover:text-white transition-colors">← All products</Link>
+          <Link href="/roadmap" className="text-[#8a8a8a] hover:text-white">Full roadmap →</Link>
+          <Link href="/" className="text-[#8a8a8a] hover:text-white">← All products</Link>
         </div>
       </section>
     </>
