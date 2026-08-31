@@ -11,13 +11,13 @@ export default function Footer() {
               <img src="/jrilicense-logo.svg" alt="JRILICENSE" width={28} height={28} className="rounded-full" />
             </div>
             <div className="text-sm font-medium mb-2">JagX &amp; JRILICENSE</div>
-            <p className="text-xs text-[#5c5c5c] leading-relaxed">AI, secure social, OS, silicon, mobility and devices — built for Africa and the world.</p>
+            <p className="text-xs text-[#5c5c5c] leading-relaxed">Eleven product lines for Africa and the world — through 2040+.</p>
           </div>
           <div>
-            <div className="text-xs text-[#5c5c5c] uppercase tracking-wider mb-3">Products</div>
+            <div className="text-xs text-[#5c5c5c] uppercase tracking-wider mb-3">Core</div>
             <div className="space-y-2 text-sm text-[#8a8a8a]">
               <Link href="/ai" className="block hover:text-white">JagX AI</Link>
-              <Link href="/connect" className="block hover:text-white">JagX Connect</Link>
+              <Link href="/connect" className="block hover:text-white">Connect</Link>
               <Link href="/os" className="block hover:text-white">JagX OS</Link>
               <Link href="/silicon" className="block hover:text-white">Silicon</Link>
               <Link href="/mobility" className="block hover:text-white">Mobility</Link>
@@ -25,12 +25,20 @@ export default function Footer() {
             </div>
           </div>
           <div>
-            <div className="text-xs text-[#5c5c5c] uppercase tracking-wider mb-3">Company</div>
-            <Link href="/about" className="block text-sm text-[#8a8a8a] hover:text-white">About</Link>
+            <div className="text-xs text-[#5c5c5c] uppercase tracking-wider mb-3">More</div>
+            <div className="space-y-2 text-sm text-[#8a8a8a]">
+              <Link href="/cloud" className="block hover:text-white">Cloud</Link>
+              <Link href="/education" className="block hover:text-white">Education</Link>
+              <Link href="/energy" className="block hover:text-white">Energy</Link>
+              <Link href="/shield" className="block hover:text-white">Shield</Link>
+              <Link href="/pay" className="block hover:text-white">Pay</Link>
+              <Link href="/roadmap" className="block hover:text-white">Roadmap</Link>
+            </div>
           </div>
           <div>
             <div className="text-xs text-[#5c5c5c] uppercase tracking-wider mb-3">Credit</div>
             <p className="text-xs text-[#5c5c5c] leading-relaxed">Designed by JagX AI<br />Created by JagX &amp; JRILICENSE</p>
+            <Link href="/about" className="inline-block mt-3 text-sm text-[#8a8a8a] hover:text-white">About →</Link>
           </div>
         </div>
         <div className="pt-6 border-t border-[#1f1f1f] flex flex-col sm:flex-row sm:justify-between gap-3 text-xs text-[#5c5c5c]">
