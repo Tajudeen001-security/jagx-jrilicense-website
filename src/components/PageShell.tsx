@@ -1,0 +1,16 @@
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+
+export default function PageShell({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <>
+      <Navbar />
+      <main className="flex-1 pt-14">{children}</main>
+      <Footer />
+    </>
+  );
+}
