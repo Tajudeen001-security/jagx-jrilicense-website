@@ -8,7 +8,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-3">
               <img src="/brand-mark.svg" alt="JagX" width={28} height={28} className="rounded-md" />
-              <img src="/jrilicense-logo.jpg" alt="JRILICENSE" width={28} height={28} className="rounded-full object-cover border border-[#2a2a2a]" />
+              <img src="/jrilicense-logo.svg" alt="JRILICENSE" width={28} height={28} className="rounded-full" />
             </div>
             <div className="text-sm font-medium mb-2">JagX &amp; JRILICENSE</div>
             <p className="text-xs text-[#5c5c5c] leading-relaxed">AI, secure social, OS, silicon, mobility and devices — built for Africa and the world.</p>
