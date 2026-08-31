@@ -13,9 +13,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "JagX & JRILICENSE",
+  title: {
+    default: "JagX & JRILICENSE",
+    template: "%s · JagX & JRILICENSE",
+  },
   description:
-    "JagX & JRILICENSE builds frontier AI, the most secure social platform for Africa and the world, silicon, mobility and devices. Created by JagX & JRILICENSE.",
+    "JagX AI, JagX Connect, JagX OS, silicon, mobility and devices — built for Africa and the world. Designed by JagX AI. Created by JagX & JRILICENSE.",
   authors: [{ name: "JagX & JRILICENSE" }],
 };
 
