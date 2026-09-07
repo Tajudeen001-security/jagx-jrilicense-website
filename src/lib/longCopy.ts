@@ -37,7 +37,7 @@ export const LONG_COPY: Record<
     worldImpact:
       "Teams everywhere need review loops, tool calling, and clear product identity. Multi-agent systems that gate destructive actions are safer for professional software work.\n\nInstitutions under compliance pressure need audit trails and honest branding. JagX AI is built for those universal needs while starting from African constraints that force efficiency.",
     direction:
-      "CLI and API maturity, free key program, Studio for education, then Edge models on Silicon and OS, then sovereign Gov deployments at scale through the 2030s.",
+      "CLI and API maturity, free key program, Studio for education, then Edge models on Silicon and OS, then sovereign Gov deployments at scale through the 2030s. Most of this line is still in build and has not yet generated revenue.",
   },
   connect: {
     longIntro:
@@ -47,7 +47,7 @@ export const LONG_COPY: Record<
       "Integration with JagX OS and Shield means social identity can eventually align with device identity.",
     ],
     africaImpact:
-      "Account takeover and leaky data practices hit African users hard. A network that prioritizes private messaging and stronger defaults is a daily advantage for families and SMEs.\n\nMetered data and weak signals are normal. Efficient clients serve people better than clones that assume unlimited Wi-Fi.\n\nTrust is economic infrastructure. When people believe a platform will not quietly train on private chats, they use it for real coordination.",
+      "Account takeover and leaky data practices hit African users hard. A network that prioritizes private messaging and stronger defaults is a daily advantage for families and SMEs.\n\nMetered data and weak signals are normal. Efficient clients serve people better than clones that assume unlimited Wi-Fi.\n\nTrust is economic infrastructure. When people believe a platform will not quietly train on private chats, they use it for real coordination.\n\nJagX Connect is the first product line that has generated real revenue for us — about ₦195,250 in its first year. That number is modest, but it is real.",
     worldImpact:
       "Stronger defaults and less performative feeds help users worldwide. A credible Secure tier gives a path for high-risk users who cannot rely on platforms that optimize only for time-on-site.",
     direction:
@@ -64,20 +64,20 @@ export const LONG_COPY: Record<
     worldImpact:
       "Professionals and privacy-conscious users everywhere want clear controls and multi-year updates. Coherence with a real AI and social stack is an advantage versus fragmented OEM skins.",
     direction:
-      "Reference devices, carrier pilots, volume OS, edge verticals, regional default ambition over the 2030s.",
+      "Reference devices, carrier pilots, volume OS, edge verticals, regional default ambition over the 2030s. Still in build; no revenue yet.",
   },
   mobility: {
     longIntro:
       "JagX Mobility treats vehicles as software-defined platforms: signed OTA, cabin intelligence, and assist features designed for real roads.",
     longBody: [
-      "Software, City, Fleet, and Autonomy types sequence the work honestly. Pilot fleets come before theatre about full self-driving.",
+      "Software, City, Fleet, and Autonomy types sequence the work honestly. Pilot fleets come before theatre about full self-driving. Cabin air and scent systems are planned as a controlled environmental layer with sealed service only through us.",
     ],
     africaImpact:
       "Road conditions and connectivity differ from highway-centric markets. Secure OTA matters when physical recalls are slow. Offline-tolerant assist is more useful than features that only work on perfect infrastructure.\n\nUrban logistics for African cities are primary design cases, not afterthoughts.",
     worldImpact:
       "Every market needs verifiable OTA and cabin systems that do not lock owners forever. The same security discipline applies globally.",
     direction:
-      "Software stack and pilots, city and fleet partners, scaled platforms and staged autonomy through 2040+.",
+      "Software stack and pilots, city and fleet partners, scaled platforms and staged autonomy through 2040+. Still in design and pilot; no revenue yet.",
   },
   devices: {
     longIntro:
@@ -90,7 +90,7 @@ export const LONG_COPY: Record<
     worldImpact:
       "Long support and clear OS identity are advantages for any market tired of disposable devices.",
     direction:
-      "Lite and pilot flagship, volume phones and edge boxes, full family through 2040+.",
+      "Lite and pilot flagship, volume phones and edge boxes, full family through 2040+. Still in build; no revenue yet.",
   },
   cloud: {
     longIntro:
@@ -103,7 +103,7 @@ export const LONG_COPY: Record<
     worldImpact:
       "Global customers who need region choice and compliance can use the same product family.",
     direction:
-      "First regions, multi-country presence, continent-scale capacity through 2040+.",
+      "First regions, multi-country presence, continent-scale capacity through 2040+. Still in build; no revenue yet.",
   },
   education: {
     longIntro:
@@ -116,7 +116,7 @@ export const LONG_COPY: Record<
     worldImpact:
       "Diaspora and global learners can follow the same tracks; certifications should mean something inside the JagX ecosystem.",
     direction:
-      "Pilot countries, labs network, continental builder pipeline through 2040+.",
+      "Pilot countries, labs network, continental builder pipeline through 2040+. Still in build; no revenue yet.",
   },
   energy: {
     longIntro:
@@ -129,20 +129,23 @@ export const LONG_COPY: Record<
     worldImpact:
       "Off-grid and disaster-resilient deployments worldwide need the same discipline.",
     direction:
-      "Kits and rails, microgrid pilots, scaled packages with Edge hardware.",
+      "Kits and rails, microgrid pilots, scaled packages with Edge hardware. Still in build; no revenue yet.",
   },
   shield: {
     longIntro:
-      "JagX Shield is security as a product line: identity, ops monitoring, threat intelligence, and audit packages.",
+      "JagX Shield is security as a product line: identity, operations monitoring, threat intelligence, audit packages — and the continental programme known as JagX Intelligent Military. It is not a private army and not a single-state security agency. It is technology, doctrine and equipment standards designed for the protection of Africa as a whole.",
     longBody: [
-      "Identity ties to OS enclaves and Connect. Ops watches social and cloud layers. Intel focuses on real abuse patterns.",
+      "Shield Identity ties to OS enclaves and Connect Secure so high-risk users, journalists and institutions can hold stronger keys. Shield Ops watches social, cloud and edge layers for abuse patterns that matter in African networks. Shield Intel focuses on real threats — account takeover, SIM-swap, disinformation, critical-infrastructure probing — rather than abstract models built for other markets.",
+      "JagX Intelligent Military extends the same stack into a shared continental layer: AI-assisted command and control building blocks, secure communications, sensor fusion, training standards, and modular security dress and vehicle platforms that African states and regional bodies can adopt without surrendering sovereignty to a single foreign vendor.",
+      "Uniforms, operational shirts and body systems are designed for African climates and logistics. Vehicle cabin and scent systems under Mobility follow the same service rule: every part returns to JagX & JRILICENSE. Every authorised garment and platform carries a discrete authenticity mark linked to Shield Identity.",
+      "Our rule is simple: human oversight stays non-negotiable; autonomy is never abdication of responsibility; data residency and decision authority stay on the continent whenever we can make that true.",
     ],
     africaImpact:
-      "Account takeover and social engineering are common, not rare. Tools that assume that reality protect high-risk users, journalists, and institutions more effectively.",
+      "Threats do not respect old borders. Fragmented national systems leave gaps. A coordinated African layer of intelligence, secure communications and shared doctrine closes those gaps without creating a single point of foreign control.\n\nAccount takeover and social engineering are everyday realities. Tools and uniforms that assume heat, dust, intermittent power and metered data protect people more effectively than imported systems designed for different climates.\n\nJobs and skills follow the work: local technicians for vehicle and uniform maintenance, local analysts for threat intel, local officers trained on systems they can inspect.",
     worldImpact:
-      "Coherent identity and ops across JagX products serve global customers under compliance pressure.",
+      "Any region that faces asymmetric threats and expensive bandwidth benefits from edge-capable security identity, interoperable C4I building blocks, and clear human-oversight rules. The same stack that serves African cooperation can serve partners who want transparent, auditable technology rather than black-box dependency.",
     direction:
-      "Identity and Ops core, Intel network, enterprise audit, regional standard path.",
+      "Identity and Ops core first. Intel network and enterprise audit next. Intelligent Military doctrine, training packages and equipment blueprints scaled across our expansion map (Nigeria, Burkina Faso, Sierra Leone, South Africa and twelve further priority countries) through 2035–2045. Most of this line is still in build and has not yet generated revenue.",
   },
   pay: {
     longIntro:
@@ -155,6 +158,6 @@ export const LONG_COPY: Record<
     worldImpact:
       "Builders and merchants globally can use the same API family as regional compliance matures.",
     direction:
-      "Wallet and merchant pilots, corridors, scale payments rail through 2040+.",
+      "Wallet and merchant pilots, corridors, scale payments rail through 2040+. Still in build; no revenue yet.",
   },
 };
