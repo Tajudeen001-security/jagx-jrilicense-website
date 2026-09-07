@@ -11,15 +11,15 @@ export default function Home() {
             <img src="/brand-mark.svg" alt="JagX" width={44} height={44} className="rounded-xl anim-pulse" />
             <img src="/jrilicense-logo.svg" alt="JRILICENSE" width={44} height={44} className="rounded-full" />
           </div>
-          <p className="eyebrow mb-6">Designed by JagX AI · Created by JagX &amp; JRILICENSE</p>
+          <p className="eyebrow mb-6">Founded 15 August 2022 · JRILICENSE 2025 · Owned by JagX & JRILICENSE</p>
           <h1 className="text-4xl sm:text-5xl md:text-[3.15rem] font-normal tracking-tight leading-[1.12] mb-8">
             Eleven product lines<br />for Africa and the world<br />— through 2040 and beyond.
           </h1>
           <p className="prose-body max-w-xl mb-5">
-            JagX &amp; JRILICENSE builds AI, secure social, operating systems, silicon, mobility, devices, cloud, education, energy, security, and payments. Every line is written for mobile-first users in Lagos, Nairobi, Accra, Johannesburg and across the continent — and for anyone worldwide who wants the same privacy and reliability.
+            JagX & JRILICENSE builds AI, secure social, operating systems, silicon, mobility, devices, cloud, education, energy, security, payments — and JagX Intelligent Military for the protection of Africa. Every line is written for mobile-first users in Lagos, Nairobi, Accra, Johannesburg and across the continent — and for anyone worldwide who wants the same privacy and reliability.
           </p>
           <p className="prose-body max-w-xl mb-10">
-            Free JagX AI API keys are published for builders. Product pages carry long explanations, formal and branded imagery, types, promises, and indicative investment through 2040+.
+            Free JagX AI API keys are published for builders. Product pages carry long explanations, types, promises, blueprints, and indicative investment through 2040+. Slogan: “Intelligence that stays home. Security that travels the continent.” JagX Connect earned about ₦195,250 in its first year; other lines are still in build.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link href="/ai" className="inline-flex px-5 py-2.5 text-sm bg-white text-black rounded-full hover:bg-[#e8e8e8] transition-colors">Free AI API keys</Link>
