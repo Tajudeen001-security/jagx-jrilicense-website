@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s · JagX & JRILICENSE",
   },
   description:
-    "JagX AI, JagX Connect, JagX OS, silicon, mobility and devices — built for Africa and the world. Designed by JagX AI. Created by JagX & JRILICENSE.",
+    "JagX AI, JagX Connect, JagX OS, silicon, mobility, devices, Shield and Intelligent Military — built for Africa and the world. Founded 15 August 2022. Owned by JagX & JRILICENSE.",
   authors: [{ name: "JagX & JRILICENSE" }],
 };
 
