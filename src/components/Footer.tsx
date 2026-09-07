@@ -36,14 +36,14 @@ export default function Footer() {
             </div>
           </div>
           <div>
-            <div className="text-xs text-[#5c5c5c] uppercase tracking-wider mb-3">Credit</div>
-            <p className="text-xs text-[#5c5c5c] leading-relaxed">Designed by JagX AI<br />Created by JagX &amp; JRILICENSE</p>
-            <Link href="/about" className="inline-block mt-3 text-sm text-[#8a8a8a] hover:text-white">About →</Link>
+            <div className="text-xs text-[#5c5c5c] uppercase tracking-wider mb-3">Ownership</div>
+            <p className="text-xs text-[#5c5c5c] leading-relaxed">Owned &amp; operated by<br />JagX &amp; JRILICENSE<br />Founded 15 Aug 2022</p>
+            <Link href="/about" className="inline-block mt-3 text-sm text-[#8a8a8a] hover:text-white">About · Slogans · Anthem →</Link>
           </div>
         </div>
         <div className="pt-6 border-t border-[#1f1f1f] flex flex-col sm:flex-row sm:justify-between gap-3 text-xs text-[#5c5c5c]">
-          <span>© 2026 JagX &amp; JRILICENSE</span>
-          <span>Designed by JagX AI</span>
+          <span>© 2026 JagX &amp; JRILICENSE · Nigeria → Africa</span>
+          <span>Intelligence that stays home. Security that travels the continent.</span>
         </div>
       </div>
     </footer>
