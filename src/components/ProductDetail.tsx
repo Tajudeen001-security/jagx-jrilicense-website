@@ -32,11 +32,10 @@ export default function ProductDetail({ product }: { product: ProductLine }) {
           <p className="eyebrow mb-4">{product.title}</p>
           <h1 className="text-4xl md:text-5xl font-normal tracking-tight mb-5 leading-tight">{product.title}</h1>
           <p className="prose-body text-lg mb-4">{product.tagline}</p>
-          <p className="text-xs text-[#5c5c5c]">Designed by JagX AI · Created by JagX &amp; JRILICENSE</p>
+          <p className="text-xs text-[#5c5c5c]">Owned by JagX & JRILICENSE · Founded 15 August 2022</p>
         </div>
       </section>
 
-      {/* ONE IMAGE PER ROW — full width, stacked */}
       <section className="px-5 pb-10">
         <div className="max-w-3xl mx-auto space-y-6">
           {gallery.map((src, i) => (
@@ -134,7 +133,7 @@ export default function ProductDetail({ product }: { product: ProductLine }) {
           <div className="max-w-3xl mx-auto">
             <p className="eyebrow mb-3">Free for builders</p>
             <h2 className="text-2xl md:text-3xl font-normal tracking-tight mb-4">JagX AI API keys</h2>
-            <p className="prose-body mb-8">Free starter keys for prototypes, student projects, and hackathons. Fair use. Published by JagX &amp; JRILICENSE.</p>
+            <p className="prose-body mb-8">Free starter keys for prototypes, student projects, and hackathons. Fair use. Published by JagX & JRILICENSE.</p>
             <div className="space-y-4">
               {FREE_API_KEYS.map((k) => (
                 <div key={k.key} className="border border-[#2a2a2a] bg-[#111] rounded-2xl p-5">
